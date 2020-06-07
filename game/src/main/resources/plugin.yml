@@ -1,0 +1,4 @@
+name: SkyWars
+version: 1.0
+main: com.zalyson.bukkit.BukkitMain
+author: zAlyson
