@@ -1,20 +1,19 @@
 package com.zalyson.bukkit;
 
 import com.zalyson.core.server.Server;
+import com.zalyson.core.server.ServerType;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class LobbyPlugin extends JavaPlugin {
 
-    private final Lobby lobby;
+    private final Server server;
 
     public LobbyPlugin() {
-        this.lobby = new Lobby(
+        this.server = new Server(
                 1,
-                new Server(
-                        getServer().getIp(),
-                        getServer().getPort()
-                ),
-                this
+                ServerType.LOBBY,
+                getServer().getIp(),
+                getServer().getPort()
         );
     }
 
@@ -23,7 +22,7 @@ public class LobbyPlugin extends JavaPlugin {
 
         getLogger().info(
                 "\n " +
-                        " §a Lobby #" + lobby.getId() + "§a iniciando.."
+                        " §a Lobby #" + server.getId() + "§a iniciando.."
                         + "\n "
         );
 
